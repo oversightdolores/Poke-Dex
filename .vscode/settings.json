@@ -1,0 +1,7 @@
+{
+    "editor.fontFamily": "'Cascadia Code Bold Italic', 'monospace', monospace",
+    "editor.fontWeight": "bold",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "'Cascadia Code Bold Italic', 'monospace', monospace",
+    "terminal.integrated.fontWeight": "bold",  
+}

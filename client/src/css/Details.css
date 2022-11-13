@@ -1,0 +1,80 @@
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff;
+    background: linear-gradient(214deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.container button {
+    font-weight: bold;
+    align-self: start;
+    margin: 5px;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #a32f2f;
+    font-size: 1.0rem;
+    color: rgb(255, 255, 255);
+    border: 1px solid #000;
+}
+
+.poke {
+    text-transform: uppercase;
+    color:  #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background-color: #fae0c8c5;
+}
+
+.poke img {
+    
+    z-index: 1;
+    width: 400px;
+    height: 400px;
+}
+
+.info {
+    color : #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 30px;
+    height: 100%;
+    
+}
+input[type='range'] {
+    
+    display: inline-block;
+    width: 250px;
+}
+
+.poke-type {
+    border-radius: 5px;
+    display: flex;
+    background-color: rgb(12, 151, 98);
+    margin:  5px;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.poke-type span {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 5px;
+}
