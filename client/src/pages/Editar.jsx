@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import {getPokemons, putPoke, getTypes, getDetail } from '../redux/actions'
+import {putPoke} from '../redux/actions'
 
 
 export default function Editar(props) {
@@ -21,12 +21,12 @@ export default function Editar(props) {
         types: [],
         image: ''
     })
-    useEffect(() => {
+   /*  useEffect(() => {
         dispatch(getDetail(id))
         dispatch(getPokemons())
         dispatch(getTypes())
     }
-    , [dispatch])
+    , []) */
     useEffect(() => {
         setInput({
             name: myPokemon.name,

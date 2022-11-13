@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import Detail from './pages/Detail';
 import CreatePoke from './pages/CreatePoke';
 import Landing from './pages/Landing';
-import Editar from './pages/Editar';
+
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
           <Route exact path="/home" component={Home}/>
            <Route path="/create" component={CreatePoke}/> 
           <Route exact path="/home/detail/:id" component={Detail}/>
-          <Route exact path="/home/detail/editar/:id" component={Editar}/>
+          {/*<Route exact path="/home/detail/editar/:id" component={Editar}/>*/}
     </Switch>
   );
 }

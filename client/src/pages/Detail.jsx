@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
-import { getDetail, getPokemons, putPoke } from "../redux/actions";
+import { getDetail, getPokemons } from "../redux/actions";
 import random from "../images/random.png";
 import "../css/Details.css";
 import "../css/Poke.css";
 
 export default function Details(props) {
-  const id = props.match.params.id;
+  
   const dispatch = useDispatch();
   console.log(props);
   useEffect(() => {

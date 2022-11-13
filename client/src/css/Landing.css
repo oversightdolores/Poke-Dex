@@ -47,9 +47,9 @@
 }
 
 .poke-up {
-  width: 200px;
+  width: 210px;
   height: 100px;
-  background-color: #972f2f;
+  background-color: #ff0000;
   display: flex;
   -moz-border-radius: 100px 100px 0 0;
   -webkit-border-radius: 100px 100px 0 0;
@@ -63,7 +63,7 @@
   -moz-border-radius: 0 0 100px 100px;
   -webkit-border-radius: 10 0 100px 100px;
   border-radius: 0 0 100px 100px;
-  width: 200px;
+  width: 210px;
   height: 100px;
   background-color: #ffffff;
   display: flex;
