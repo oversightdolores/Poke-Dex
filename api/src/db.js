@@ -6,10 +6,39 @@ const {
   PG_USER, PG_PASSWORD, PG_HOST, PG_PORT, PG_DATABASE,
 } = process.env;
 
-const sequelize = new Sequelize(`postgresql://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/${PG_DATABASE}`, {
+let sequelize =
+  process.env.NODE_ENV === "production"
+    ? new Sequelize({
+        database: PG_DATABASE,
+        dialect: "postgres",
+        host: PG_HOST,
+        port: 5432,
+        username: PG_USER,
+        password: PG_PASSWORD,
+        pool: {
+          max: 3,
+          min: 1,
+          idle: 10000,
+        },
+        dialectOptions: {
+          ssl: {
+            require: true,
+            // Ref.: https://github.com/brianc/node-postgres/issues/2009
+            rejectUnauthorized: false,
+          },
+          keepAlive: true,
+        },
+        ssl: true,
+      })
+    : new Sequelize(
+        `postgres://${PG_USER}:${PG_PASSWORD}@${PG_HOST}/development`,
+        { logging: false, native: false }
+      );
+
+/* const sequelize = new Sequelize(`postgresql://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/${PG_DATABASE}`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-});
+}); */
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
