@@ -31,7 +31,7 @@ let sequelize =
         ssl: true,
       })
     : new Sequelize(
-        `postgresql://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/${PG_DATABASE}`,
+        `postgresql://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/pokemon`,
         { logging: false, native: false }
       );
 
