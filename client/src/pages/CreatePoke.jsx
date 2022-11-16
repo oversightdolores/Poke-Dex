@@ -27,9 +27,10 @@ const CreatePoke = () => {
     weight: 0,
     image: "",
     types: [],
-    alert: "",
+    
   });
 
+  const [alert, setAlert] = useState('')
   useEffect(() => {
     dispatch(getTypes());
     dispatch(getPokemons());
@@ -76,10 +77,9 @@ const CreatePoke = () => {
   function handleSubmit(e) {
     e.preventDefault();
     if (Object.keys(errors).length > 0) {
-      setInput({
-        ...input,
-        alert: "Por favor, revise los campos",
-      });
+     
+        setAlert( "Por favor, revise los campos")
+    
     } else if (
       input.speed &&
       input.height &&
@@ -91,10 +91,8 @@ const CreatePoke = () => {
       input.attack &&
       input.defense
     ) {
-      setInput({
-        ...input,
-        alert: "Pokemon creado con éxito",
-      });
+     
+        setAlert( "Pokemon creado con éxito")
       dispatch(postPokemon(input));
       dispatch(getPokemons());
       setInput({
@@ -113,10 +111,8 @@ const CreatePoke = () => {
         history.push("/home");
       }, 2000);
     } else {
-      setInput({
-        ...input,
-        alert: "Por favor, complete los campos",
-      });
+    
+        setAlert("Por favor, complete los campos")
     }
   }
   console.log(Object.keys(errors));
@@ -127,7 +123,7 @@ const CreatePoke = () => {
       <section className="createPoke">
         <form onSubmit={handleSubmit}>
           <h1>Create your Pokemon</h1>
-          <h2>{input.alert}</h2>
+          <h2>{alert}</h2>
           <div className="form-group">
             <label>Name </label>
             <input

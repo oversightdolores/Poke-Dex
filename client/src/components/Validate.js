@@ -6,7 +6,7 @@ export function validateImg(input) {
 
 export function validate(input, pokemons) {
   let errors = {};
-  let RegExpression = /^[a-zA-Z\s]*$/;
+  let RegExpression = /^[a-z\s]*$/;
 
   if (!input.name) {
     errors.name = "Se requiere un nombre";

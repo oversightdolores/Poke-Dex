@@ -102,7 +102,7 @@ function rootReducer (state = initialState, action){
             let sortedArray
 
             if(action.payload === 'asc'){
-                sortedArray = state.pokemons.sort(function (a, b){
+               sortedArray = state.pokemons.sort(function (a, b)  {
                         if(a.name > b.name){
                             return 1;
                         }
@@ -169,7 +169,7 @@ function rootReducer (state = initialState, action){
 
             return {
                 ...state,
-                pokemons: sortedArray
+                pokemons: [...sortedArray]
             }  
 
         default: 
